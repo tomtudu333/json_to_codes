@@ -12,6 +12,8 @@ use App\Http\Controllers\Laravel\Statement\Statement;
 use  App\Http\Controllers\Laravel\Page\Pagegenerator;
 use App\Http\Controllers\Phpcodewriter\Phpcodewriter;
 
+use App\Http\Controllers\Laravel\Database\Database;
+
 class Laravel extends Controller
 {
     //
@@ -24,15 +26,28 @@ public function test_function(){
     //$code = Codegenerator::test();
     //$array =['table_name'=>'my_table','cols'=>['some','cols'],"main_route"=>"some_route"];
     //"table_name":"my_table", "cols":["some","cols","names"], "main_route":"some_route"
-    $json = '{"functionPath":"your/class/then/function"}';
+    // $json = '{"functionPath":"your/class/then/function"}';
 
-    $val = json_decode($json,true);
+    // $val = json_decode($json,true);
 
-    var_dump($val);
+    // var_dump($val);
 
-    $code = Pagegenerator::createSimpleGetPagePage($val);
+    // $code = Pagegenerator::createSimpleGetPagePage($val);
 
-    echo "The code - ".$code;
+    // echo "The code - ".$code;
+    $data = 'Table_name
+    col_one
+    col_one
+    
+    
+Table_two
+    t_t
+    t_p';
+    $joson = Database::createTableJson($data);
+
+    echo $joson;
+    //execute the function
+
     //$code = Statement::increaseFunctionality($array);
 
     // $array =['functionPath'=>'some\\thing\\functionName'];
@@ -42,7 +57,7 @@ public function test_function(){
     //Storage::disk('local')->put('../file.txt', 'Contents');
       // $file = '../app/Http/Controllers/Phpcodetest/Phpcodetest.php';
       // Phpcodewriter::writePhpCodestoFile("//some codes newly created...",$file);
-      }
+      } 
  
       public function laravel_main(){
 
