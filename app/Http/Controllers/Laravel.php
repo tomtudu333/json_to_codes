@@ -22,7 +22,17 @@ public function test_function(){
     //return view('common.test');
     //init the code and test the function
     //$code = Codegenerator::test();
-    //$array =['classPath'=>'somePath','functionName'=>'someFunction'];
+    //$array =['table_name'=>'my_table','cols'=>['some','cols'],"main_route"=>"some_route"];
+    //"table_name":"my_table", "cols":["some","cols","names"], "main_route":"some_route"
+    $json = '{"functionPath":"your/class/then/function"}';
+
+    $val = json_decode($json,true);
+
+    var_dump($val);
+
+    $code = Pagegenerator::createSimpleGetPagePage($val);
+
+    echo "The code - ".$code;
     //$code = Statement::increaseFunctionality($array);
 
     // $array =['functionPath'=>'some\\thing\\functionName'];
@@ -30,10 +40,10 @@ public function test_function(){
     // echo $code;
 
     //Storage::disk('local')->put('../file.txt', 'Contents');
-      $file = '../app/Http/Controllers/Phpcodetest/Phpcodetest.php';
-      Phpcodewriter::writePhpCodestoFile("//some codes newly created...",$file);
+      // $file = '../app/Http/Controllers/Phpcodetest/Phpcodetest.php';
+      // Phpcodewriter::writePhpCodestoFile("//some codes newly created...",$file);
       }
-
+ 
       public function laravel_main(){
 
     return view('laravel.editor');
@@ -86,9 +96,19 @@ public function test_function(){
             $code = Statement::createForLoopPhp($val);
             break;
 
+            case 'addEditDeleteCode':
+            $code = Classes::addEditDeleteCode($val);
+            break;
+
+            case 'createAjaxCodes':
+            $code = Pagegenerator::createAjaxCodes($val);
+            break;
+
             default:
             $code = "Please select functionality...";
             break;
+
+
           }
 
           //json_decode('{"foo":"bar"}');

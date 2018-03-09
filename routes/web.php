@@ -20,7 +20,7 @@ Route::get('/java', 'Java@java_main');
 Route::get('/java/test', 'Java@test');
 
 
-
+ 
 
 //post the json and output java code
 Route::post('/java/get_codes','Java@getJavaCode');
@@ -37,7 +37,7 @@ Route::get('/mastercodegenerator', 'Mastercodegenerator@mastercodegenerator_main
 //post for master code generator
 Route::post('/mastercodegenerator/get_codes','Mastercodegenerator@getCode');
 
-
+ 
 
 
 //the editor panel

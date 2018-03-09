@@ -25,7 +25,7 @@ $endsection
                 return x;
             }</div>
       </div>
-    </div>
+    </div> 
     <br>
 <div class="row">
   <div class="col-lg-2">
@@ -38,6 +38,8 @@ $endsection
       <option>increaseFunctionality</option>
       <option>createSimpleGetPagePage</option>
       <option>createForLoopPhp</option>
+      <option>addEditDeleteCode</option>
+      <option>createAjaxCodes</option>
       <option>other</option>
     </select>
   </div>
@@ -87,6 +89,12 @@ $endsection
           var usageSample = "";
 
           switch (selected_functionality) {
+
+
+            case "addEditDeleteCode":
+            usageSample = '{"table_name":"my_table", "cols":["some","cols","names"], "main_route":"some_route"}';
+            break;
+
             case "increaseFunctionality":
             usageSample = '{"classPath":"Laravel\\Page\\Pagegenerator","functionName":"createSimpleGetPagePage"}';
             break;
@@ -96,15 +104,24 @@ $endsection
             break;
 
             case "createSimpleGetPagePage":
-            usageSample = '{"functionPath":"your\\class\\then\\function"}';
+            usageSample = '{"functionPath":"your/class/then/function"}';
+            break;
+
+            case "createAjaxCodes":
+            usageSample = '{"function_name":"someFunction", "class_name":"SomeClass", "cols":["some","cols","names"], "url":"/some/url"}';
             break;
             //createForLoopPhp
+
+
+
+            //
+      
 
             case "createForLoopPhp":
             usageSample = '';
             usageSample+='{"fields":{"0":"field_one","1":"field_two","3":"field_three"},'+"\n";
-usageSample+='"seperated_by":" ,\\n",'+"\n";
-usageSample+='"stringNvars":"public string {} = {};"'+"\n";
+            usageSample+='"seperated_by":" ,\\n",'+"\n";
+            usageSample+='"stringNvars":"public string {} = {};"'+"\n";
 
             break;
 
