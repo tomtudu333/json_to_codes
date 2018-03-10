@@ -35,14 +35,18 @@ public function test_function(){
     // $code = Pagegenerator::createSimpleGetPagePage($val);
 
     // echo "The code - ".$code;
-    $data = 'Table_name
-    col_one
-    col_one
-    
-    
-Table_two
-    t_t
-    t_p';
+    $data = 'table_one
+  col_one
+  col_two
+  col_three
+
+
+
+
+table_two
+  table_col_one
+  table_col_two 
+  table_col_three';
     $joson = Database::createTableJson($data);
 
     echo $joson;
@@ -91,6 +95,7 @@ Table_two
           $val = json_decode($jsonString,true);
           $code = "";
           switch ($selected_functionality) {
+            
             case 'getCode':
             $code = $this->getCode($val );
             break;
@@ -122,7 +127,6 @@ Table_two
             default:
             $code = "Please select functionality...";
             break;
-
 
           }
 

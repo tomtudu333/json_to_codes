@@ -95,6 +95,32 @@ Route::get('/yii_framework/test_functions','Yii_framework@test_function');
 
 
 
+////////////////////FOR JSON DATABASE
+Route::get('/json_database/add-form', 'Json_database\Json_database@showAddForm');
+
+Route::get('/json_database/delete/{id}','Json_database\Json_database@delete');
+
+        //add the create apply data
+Route::post('/json_database/add','Json_database\Json_database@addData');
+
+        //edit the create apply data
+Route::get('/json_database/edit/{id}','Json_database\Json_database@showEditForm');
+
+Route::post('/json_database/edit_data','Json_database\Json_database@validateAndUpdate');
+
+        //create apply
+Route::get('/json_database/list', 'Json_database\Json_database@showList');
+
+
+
+//the editor panel
+Route::get('/Database_design','Database_design@Database_design_main');
+//post method to get the codes
+Route::post('/Database_design/get_codes','Database_design@getLanguageCode');
+//to test the functions in this package
+Route::get('/Database_design/test_functions','Database_design@test_function');
+
+
 
 
 //the site map

@@ -63,7 +63,10 @@ $endsection
     </ul>
   </div>
   <div class="col-lg-4">
-
+    <h3>Add database structure</h3>
+    <ul>
+      <li><a href="{{ url('/') }}/json_database/add-form">Add new database structure</a></li>
+    </ul>
   </div>
   <div class="col-lg-4">
 
